@@ -70,14 +70,14 @@
 
   <script src="Build/d29f5c8c12bd9d501f4fe294b1e5e435.loader.js"></script>
   <script>
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+    const isMobileDevice = navigator.maxTouchPoints > 0 && !!document.createElement('canvas').getContext('webgl')?.getExtension('WEBGL_compressed_texture_astc');
 
     const desktopPixelCount = 3686400;
     const mobilePixelCount = 921600;
 
     const settings = {
       arguments: [],
-      dataUrl: "Build/934e1abe206740050ab73f4f57d9cc91.data.unityweb",
+      dataUrl: "Build/5a740ac321cf93352a3734b6fbfa3b11.data.unityweb",
       frameworkUrl: "Build/17d21c34e0bbc0179f2b80fef9f72972.framework.js.unityweb",
       codeUrl: "Build/a321a07c4f08b768c8d2eba9955ddac9.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
